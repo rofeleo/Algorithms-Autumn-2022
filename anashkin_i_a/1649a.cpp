@@ -1,14 +1,16 @@
 ﻿#include <iostream>
 #include <vector>
 
+
+
 void solve() {
     
-    int locations;
-    std::cin >> locations;
+    int n_locations;
+    std::cin >> n_locations;
     
-    std::vector<bool> is_earth(locations);
+    std::vector<bool> is_earth(n_locations);
     
-    for (int i(0); i < locations; ++i) {
+    for (int i(0); i < n_locations; i += 1) {
         // std::cin >> is_earth[i]; Will not work. I don't know why.
         int cur_loc;
         std::cin >> cur_loc;
@@ -34,10 +36,11 @@ void solve() {
 }
 
 
+
 int main() {
-    int tests;
-    std::cin >> tests;
-    while (tests--) {
+    int n_tests;
+    std::cin >> n_tests;
+    while (n_tests--) {
         solve();
         std::cout << "\n";
     }

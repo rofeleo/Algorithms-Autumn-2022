@@ -1,50 +1,50 @@
 #include <iostream>
 #include <vector>
 
-struct coord{
+struct Coord {
    int x, y;
 };
 
 void solve() {
     int n;
     std::cin >> n;
-    std::vector<coord> stars;
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
+    std::vector<Coord> stars;
+    for (int i_row(0); i_row < n; i_row += 1) {
+        for (int i_col(0); i_col < n; i_col += 1) {
             char c;
             std::cin >> c;
-            if (c == '*') stars.push_back({i, j});
+            if (c == '*') stars.push_back({i_row, i_col});
         }
     }
-    std::vector<int> X, Y;
+    std::vector<int> x_unique, y_unique;
     if (stars[0].x != stars[1].x && stars[0].y != stars[1].y) {
-        X.push_back(stars[0].x);
-        X.push_back(stars[1].x);
-        Y.push_back(stars[0].y);
-        Y.push_back(stars[1].y);
+        x_unique.push_back(stars[0].x);
+        x_unique.push_back(stars[1].x);
+        y_unique.push_back(stars[0].y);
+        y_unique.push_back(stars[1].y);
 
     } else if (stars[0].x != stars[1].x) {
-        X.push_back(stars[0].x);
-        X.push_back(stars[1].x);
-        Y.push_back(stars[0].y);
-        if (Y[0] + 1 < n) {
-            Y.push_back(stars[0].y + 1);
+        x_unique.push_back(stars[0].x);
+        x_unique.push_back(stars[1].x);
+        y_unique.push_back(stars[0].y);
+        if (y_unique[0] + 1 < n) {
+            y_unique.push_back(stars[0].y + 1);
         } else {
-            Y.push_back(stars[0].y - 1);
+            y_unique.push_back(stars[0].y - 1);
         }
     } else {
-        Y.push_back(stars[0].y);
-        Y.push_back(stars[1].y);
-        X.push_back(stars[0].x);
-        if (X[0] + 1 < n) {
-            X.push_back(stars[0].x + 1);
+        y_unique.push_back(stars[0].y);
+        y_unique.push_back(stars[1].y);
+        x_unique.push_back(stars[0].x);
+        if (x_unique[0] + 1 < n) {
+            x_unique.push_back(stars[0].x + 1);
         } else {
-            X.push_back(stars[0].x - 1);
+            x_unique.push_back(stars[0].x - 1);
         }
     }
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            if ((i == X[0] || i == X[1]) && (j == Y[1] || j == Y[0])) {
+    for (int i_row(0); i_row < n; i_row += 1) {
+        for (int i_col(0); i_col < n; i_col += 1) {
+            if ((i_row == x_unique[0] || i_row == x_unique[1]) && (i_col == y_unique[1] || i_col == y_unique[0])) {
                 std::cout << '*';
             } else {
                 std::cout << '.';
@@ -55,9 +55,9 @@ void solve() {
 }
 
 int main() {
-    int tests;
-    std::cin >> tests;
-    while (tests--) {
+    int n_tests;
+    std::cin >> n_tests;
+    while (n_tests--) {
         solve();
     }
 

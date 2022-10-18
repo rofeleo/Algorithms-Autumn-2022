@@ -1,11 +1,12 @@
 #include <iostream>
 #include <vector>
 
+
 void solve() {
-    int cnt_nums;
-    std::cin >> cnt_nums;
+    int n_nums;
+    std::cin >> n_nums;
     int all_conj;
-    for (int i = 0; i < cnt_nums; ++i) {
+    for (int i(0); i < n_nums; i += 1) {
         int num;
         std::cin >> num;
         if (i) {
@@ -19,9 +20,9 @@ void solve() {
 
 
 int main() {
-    int tests;
-    std::cin >> tests;
-    while (tests--) {
+    int n_tests;
+    std::cin >> n_tests;
+    while (n_tests--) {
         solve();
         std::cout << "\n";
     }

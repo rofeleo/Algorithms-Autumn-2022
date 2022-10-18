@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-int funcSign(int num_x, int num_y) {
+int FuncSign(int num_x, int num_y) {
     if (num_x - num_y == 0) return 0;
     else if (num_x - num_y < 0) return -1;
     else return 1;
@@ -18,22 +18,22 @@ int main() {
     if (way[0] == 'U') last_nz_y = 1;
     if (way[0] == 'R') last_nz_x = 1;
 
-    int curX = last_nz_x, curY = last_nz_y;
+    int cur_x = last_nz_x, cur_y = last_nz_y;
 
     int money = 0;
 
-    for (int curStep = 1; curStep < steps; ++curStep) {
+    for (int curStep = 1; curStep < steps; curStep += 1) {
         if (way[curStep] == 'U') {
-            curY++;
+            cur_y++;
         } else {
-            curX++;
+            cur_x++;
         }
-        if (funcSign(curX, curY)) {
-            if (funcSign(curX, curY) != funcSign(last_nz_x, last_nz_y)) {
+        if (FuncSign(cur_x, cur_y)) {
+            if (FuncSign(cur_x, cur_y) != FuncSign(last_nz_x, last_nz_y)) {
                 money++;
             }
-            last_nz_x = curX;
-            last_nz_y = curY;
+            last_nz_x = cur_x;
+            last_nz_y = cur_y;
         }
     }
 

@@ -1,13 +1,11 @@
 ﻿#include <iostream>
 
-#define INF 1000
-
 
 int main() {
     int buckets, garden_len;
     std::cin >> buckets >> garden_len;
-    int time = INF;
-    for (int i = 0; i < buckets; ++i) {
+    int time = 1000000;
+    for (int i = 0; i < buckets; i += 1) {
         int bucket_seg;
         std::cin >> bucket_seg;
         if (garden_len % bucket_seg == 0) {
