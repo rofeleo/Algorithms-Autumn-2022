@@ -22,6 +22,7 @@ void solve() {
 
 
 
+
 int main() {
     int n_tests;
     std::cin >> n_tests;

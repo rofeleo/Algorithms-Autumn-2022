@@ -1,18 +1,18 @@
 ﻿#include <iostream>
 #include <vector>
 
-#define SIDE 8
+const int kSide = 8;
 
-bool is_at_field(const int& i_col, const int& i_row) {
-    return i_col < SIDE && i_row < SIDE;
+bool IsAtField(const int& i_col, const int& i_row) {
+    return i_col < kSide && i_row < kSide;
 }
 
 void solve() {
     
-    char field[SIDE][SIDE];
+    char field[kSide][kSide];
     
-    for (int i_col(0); i_col < SIDE; ++i_col) {
-        for (int i_row(0); i_row < SIDE; ++i_row) {
+    for (int i_col(0); i_col < kSide; i_col += 1) {
+        for (int i_row(0); i_row < kSide; i_row += 1) {
             std::cin >> field[i_col][i_row];
         }
     }
@@ -24,17 +24,17 @@ void solve() {
         {1, -1}
     };
 
-    for (int i_col(0); i_col < SIDE; ++i_col) {
-        for (int i_row(0); i_row < SIDE; ++i_row) {
+    for (int i_row(0); i_row < kSide; i_row += 1) {
+        for (int i_col(0); i_col < kSide; i_row += 1) {
             int i_offset(0);
             for (; i_offset < 4; ++i_offset) {
-                int i_col_next(offset[i_offset][0] + i_col), i_row_next(offset[i_offset][1] + i_row);
-                if (!(is_at_field(i_col_next, i_row_next) && field[i_col_next][i_row_next] == '#')) {
+                int i_row_next(offset[i_offset][0] + i_row), i_col_next(offset[i_offset][1] + i_col);
+                if (!(IsAtField(i_row_next, i_col_next) && field[i_row_next][i_col_next] == '#')) {
                     break;
                 }
             }
             if (i_offset == 4) {
-                std::cout << i_col + 1 << " " << i_row + 1;
+                std::cout << i_row + 1 << " " << i_col + 1;
                 return;
             }
         }
@@ -44,9 +44,9 @@ void solve() {
 
 
 int main() {
-    int tests;
-    std::cin >> tests;
-    while (tests--) {
+    int n_tests;
+    std::cin >> n_tests;
+    while (n_tests--) {
         solve();
         std::cout << "\n";
     }

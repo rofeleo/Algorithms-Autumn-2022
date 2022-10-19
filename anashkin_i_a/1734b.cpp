@@ -1,11 +1,11 @@
 #include <iostream>
 
 void solve() {
-    int floors;
-    std::cin >> floors;
-    for (int floor = 0; floor < floors; floor++) {
+    int n_floors;
+    std::cin >> n_floors;
+    for (int floor(0); floor < n_floors; floor += 1) {
         std::cout << 1 << " ";
-        for (int mesh = 0; mesh < floor - 1; mesh++) {
+        for (int mesh(0); mesh < floor - 1; mesh += 1) {
             std::cout << 0 << " ";
         }
         if (floor > 0) {
@@ -17,9 +17,9 @@ void solve() {
 
 
 int main() {
-    int tests;
-    std::cin >> tests;
-    while (tests--) {
+    int n_tests;
+    std::cin >> n_tests;
+    while (n_tests--) {
         solve();
     }
 
