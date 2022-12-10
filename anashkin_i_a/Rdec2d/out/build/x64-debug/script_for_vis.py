@@ -1,7 +1,5 @@
 from matplotlib import pyplot as plt
 
-
-
 f = open('output.txt', 'r')
 
 x_mouse = []
@@ -11,18 +9,20 @@ y_cat = []
 all = []
 
 for line in f:
-  all.append(line[:-1].split(' '))
+  all.append(line)
 
-for i in range(len(all)):
-	for j in range(4):
-		all[i][j] = float(all[i][j])
+f.close()
 
-for i in range(len(all)):
-  x_mouse.append(all[i][0])
-  y_mouse.append(all[i][1])
-  x_cat.append(all[i][2])
-  y_cat.append(all[i][3])
+for i in range(len(all) - 1):
+  s = all[i][:-1].split(' ')
+  x_mouse.append(float(s[0]))
+  y_mouse.append(float(s[1]))
+  x_cat.append(float(s[2]))
+  y_cat.append(float(s[3]))
 
-plt.plot(x_mouse, y_mouse, x_cat, y_cat, marker='o')
+fig = plt.figure()
+
+fig.suptitle(all[-1], fontsize=14, fontweight='bold')
+plt.plot(x_mouse, y_mouse, x_cat, y_cat, [0], [0], marker='o')
 
 plt.savefig('foo.png')

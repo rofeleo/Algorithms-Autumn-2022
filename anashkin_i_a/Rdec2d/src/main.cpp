@@ -41,11 +41,13 @@ int main() {
 
 	fin >> attack_range;
 
-	double k_step = 0.23;
+	double k_step = attack_range * 0.8;
 
-	Rdec2D mouse_speed_dir(0, 1), cat_speed_dir(mouse_pos.x - cat_pos.x, mouse_pos.y - cat_pos.y);
+	Rdec2D mouse_speed_dir(-mouse_pos.x, -mouse_pos.y), cat_speed_dir(mouse_pos.x - cat_pos.x, mouse_pos.y - cat_pos.y);
 
 	Norm(cat_speed_dir);
+
+	Norm(mouse_speed_dir);
 
 	double cat_way = 0;
 
@@ -63,18 +65,13 @@ int main() {
 
 		Norm(cat_speed_dir);
 
-		if (cat_pos.x < -5 || mouse_pos.y > 5) {
-			fout << "Do k_steps less!!!";
-			return 0;
-		}
-
 	}
 
 	if (mouse_pos.y > -eps) {
-		fout << "Мышь убежала\n";
+		fout << "Mouse in house\n";
 	}
 	else {
-		fout << "Мышь поймана\n";
+		fout << "Cat got mouse\n";
 	}
 
 	return 0;
