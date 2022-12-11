@@ -38,7 +38,7 @@ int main() {
 
 	fin >> attack_range;
 
-	double k_step = attack_range * 0.8;
+	double k_step = Len(mouse_pos - cat_pos) * 0.5;
 
 	Rdec2D mouse_speed_dir = -mouse_pos, cat_speed_dir = mouse_pos - cat_pos;
 
@@ -52,7 +52,7 @@ int main() {
 
 	Rdec2D mouse_start = mouse_pos;
 
-	while (Len(mouse_pos -mouse_start) - Len(mouse_start) < kEps
+	while (Len(mouse_pos - mouse_start) - Len(mouse_start) < kEps
 		&& Len(cat_pos - mouse_pos) > attack_range) {
 
 		fout << mouse_pos << " " << cat_pos << "\n";
@@ -67,6 +67,7 @@ int main() {
 
 		Norm(cat_speed_dir);
 
+		k_step = Len(mouse_pos - cat_pos) * 0.5;
 	}
 
 	fout << mouse_pos << " " << cat_pos << "\n";
@@ -75,7 +76,7 @@ int main() {
 		fout << "Mouse in house\n";
 	}
 	else {
-		fout << "Cat got mouse\n";
+		fout << "Cat cought mouse\n";
 	}
 
 	return 0;
