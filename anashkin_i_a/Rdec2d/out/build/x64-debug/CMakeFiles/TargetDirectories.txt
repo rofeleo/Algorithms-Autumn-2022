@@ -1,3 +1,7 @@
-C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug/CMakeFiles/Rdec2d.dir
+C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug/CMakeFiles/cat_and_mouse.dir
+C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug/CMakeFiles/r2d.doctest.dir
 C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug/CMakeFiles/edit_cache.dir
 C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug/r2d/CMakeFiles/Rdec2d.dir
+C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug/r2d/CMakeFiles/edit_cache.dir
+C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug/r2d/CMakeFiles/rebuild_cache.dir

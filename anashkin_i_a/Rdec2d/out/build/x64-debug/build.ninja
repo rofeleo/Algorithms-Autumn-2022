@@ -41,49 +41,78 @@ include CMakeFiles\rules.ninja
 
 cmake_ninja_workdir = C$:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\out\build\x64-debug\
 # =============================================================================
-# Object build statements for EXECUTABLE target Rdec2d
+# Object build statements for EXECUTABLE target cat_and_mouse
 
 
 #############################################
-# Order-only phony target for Rdec2d
+# Order-only phony target for cat_and_mouse
 
-build cmake_object_order_depends_target_Rdec2d: phony || CMakeFiles\Rdec2d.dir
+build cmake_object_order_depends_target_cat_and_mouse: phony || cmake_object_order_depends_target_Rdec2d
 
-build CMakeFiles\Rdec2d.dir\src\Rdec2d.cpp.obj: CXX_COMPILER__Rdec2d_Debug C$:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\src\Rdec2d.cpp || cmake_object_order_depends_target_Rdec2d
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
+build CMakeFiles\cat_and_mouse.dir\main.cpp.obj: CXX_COMPILER__cat_and_mouse_Debug C$:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\main.cpp || cmake_object_order_depends_target_cat_and_mouse
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   INCLUDES = -IC:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\.
-  OBJECT_DIR = CMakeFiles\Rdec2d.dir
-  OBJECT_FILE_DIR = CMakeFiles\Rdec2d.dir\src
-  TARGET_COMPILE_PDB = CMakeFiles\Rdec2d.dir\
-  TARGET_PDB = Rdec2d.pdb
-
-build CMakeFiles\Rdec2d.dir\src\main.cpp.obj: CXX_COMPILER__Rdec2d_Debug C$:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\src\main.cpp || cmake_object_order_depends_target_Rdec2d
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
-  INCLUDES = -IC:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\.
-  OBJECT_DIR = CMakeFiles\Rdec2d.dir
-  OBJECT_FILE_DIR = CMakeFiles\Rdec2d.dir\src
-  TARGET_COMPILE_PDB = CMakeFiles\Rdec2d.dir\
-  TARGET_PDB = Rdec2d.pdb
+  OBJECT_DIR = CMakeFiles\cat_and_mouse.dir
+  OBJECT_FILE_DIR = CMakeFiles\cat_and_mouse.dir
+  TARGET_COMPILE_PDB = CMakeFiles\cat_and_mouse.dir\
+  TARGET_PDB = bin.dbg\cat_and_mouse.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Rdec2d
+# Link build statements for EXECUTABLE target cat_and_mouse
 
 
 #############################################
-# Link the executable Rdec2d.exe
+# Link the executable bin.dbg\cat_and_mouse.exe
 
-build Rdec2d.exe: CXX_EXECUTABLE_LINKER__Rdec2d_Debug CMakeFiles\Rdec2d.dir\src\Rdec2d.cpp.obj CMakeFiles\Rdec2d.dir\src\main.cpp.obj
+build bin.dbg\cat_and_mouse.exe: CXX_EXECUTABLE_LINKER__cat_and_mouse_Debug CMakeFiles\cat_and_mouse.dir\main.cpp.obj | r2d\Rdec2d.lib || r2d\Rdec2d.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = CMakeFiles\Rdec2d.dir
+  LINK_LIBRARIES = r2d\Rdec2d.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\cat_and_mouse.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Rdec2d.dir\
-  TARGET_FILE = Rdec2d.exe
-  TARGET_IMPLIB = Rdec2d.lib
-  TARGET_PDB = Rdec2d.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\cat_and_mouse.dir\
+  TARGET_FILE = bin.dbg\cat_and_mouse.exe
+  TARGET_IMPLIB = cat_and_mouse.lib
+  TARGET_PDB = bin.dbg\cat_and_mouse.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target r2d.doctest
+
+
+#############################################
+# Order-only phony target for r2d.doctest
+
+build cmake_object_order_depends_target_r2d.doctest: phony || cmake_object_order_depends_target_Rdec2d
+
+build CMakeFiles\r2d.doctest.dir\r2d_doctest.cpp.obj: CXX_COMPILER__r2d.2edoctest_Debug C$:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\r2d_doctest.cpp || cmake_object_order_depends_target_r2d.doctest
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
+  INCLUDES = -IC:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\.
+  OBJECT_DIR = CMakeFiles\r2d.doctest.dir
+  OBJECT_FILE_DIR = CMakeFiles\r2d.doctest.dir
+  TARGET_COMPILE_PDB = CMakeFiles\r2d.doctest.dir\
+  TARGET_PDB = bin.dbg\r2d.doctest.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target r2d.doctest
+
+
+#############################################
+# Link the executable bin.dbg\r2d.doctest.exe
+
+build bin.dbg\r2d.doctest.exe: CXX_EXECUTABLE_LINKER__r2d.2edoctest_Debug CMakeFiles\r2d.doctest.dir\r2d_doctest.cpp.obj | r2d\Rdec2d.lib || r2d\Rdec2d.lib
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = r2d\Rdec2d.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\r2d.doctest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\r2d.doctest.dir\
+  TARGET_FILE = bin.dbg\r2d.doctest.exe
+  TARGET_IMPLIB = r2d.doctest.lib
+  TARGET_PDB = bin.dbg\r2d.doctest.pdb
 
 
 #############################################
@@ -109,9 +138,81 @@ build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Rdec2d
+
+
+#############################################
+# Order-only phony target for Rdec2d
+
+build cmake_object_order_depends_target_Rdec2d: phony || r2d\CMakeFiles\Rdec2d.dir
+
+build r2d\CMakeFiles\Rdec2d.dir\Rdec2d.cpp.obj: CXX_COMPILER__Rdec2d_Debug C$:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\r2d\Rdec2d.cpp || cmake_object_order_depends_target_Rdec2d
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
+  OBJECT_DIR = r2d\CMakeFiles\Rdec2d.dir
+  OBJECT_FILE_DIR = r2d\CMakeFiles\Rdec2d.dir
+  TARGET_COMPILE_PDB = r2d\CMakeFiles\Rdec2d.dir\Rdec2d.pdb
+  TARGET_PDB = r2d\Rdec2d.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Rdec2d
+
+
+#############################################
+# Link the static library r2d\Rdec2d.lib
+
+build r2d\Rdec2d.lib: CXX_STATIC_LIBRARY_LINKER__Rdec2d_Debug r2d\CMakeFiles\Rdec2d.dir\Rdec2d.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = r2d\CMakeFiles\Rdec2d.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = r2d\CMakeFiles\Rdec2d.dir\Rdec2d.pdb
+  TARGET_FILE = r2d\Rdec2d.lib
+  TARGET_PDB = r2d\Rdec2d.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build r2d\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\out\build\x64-debug\r2d && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build r2d\edit_cache: phony r2d\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build r2d\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\out\build\x64-debug\r2d && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d -BC:\Users\ilya\Algorithms-Autumn-2022\anashkin_i_a\Rdec2d\out\build\x64-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build r2d\rebuild_cache: phony r2d\CMakeFiles\rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
-build Rdec2d: phony Rdec2d.exe
+build Rdec2d: phony r2d\Rdec2d.lib
+
+build Rdec2d.lib: phony r2d\Rdec2d.lib
+
+build cat_and_mouse: phony bin.dbg\cat_and_mouse.exe
+
+build cat_and_mouse.exe: phony bin.dbg\cat_and_mouse.exe
+
+build r2d.doctest: phony bin.dbg\r2d.doctest.exe
+
+build r2d.doctest.exe: phony bin.dbg\r2d.doctest.exe
 
 # =============================================================================
 # Folder targets.
@@ -121,7 +222,14 @@ build Rdec2d: phony Rdec2d.exe
 #############################################
 # Folder: C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug
 
-build all: phony Rdec2d.exe
+build all: phony bin.dbg\cat_and_mouse.exe bin.dbg\r2d.doctest.exe r2d\all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/ilya/Algorithms-Autumn-2022/anashkin_i_a/Rdec2d/out/build/x64-debug/r2d
+
+build r2d\all: phony r2d\Rdec2d.lib
 
 # =============================================================================
 # Built-in targets
@@ -130,14 +238,14 @@ build all: phony Rdec2d.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ..\..\..\CMakeLists.txt C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.23.22060601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ..\..\..\CMakeLists.txt ..\..\..\r2d\CMakeLists.txt C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.23.22060601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ..\..\..\CMakeLists.txt C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.23.22060601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeSystem.cmake: phony
+build ..\..\..\CMakeLists.txt ..\..\..\r2d\CMakeLists.txt C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.23.22060601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.23.22060601-MSVC_2\CMakeSystem.cmake: phony
 
 
 #############################################
