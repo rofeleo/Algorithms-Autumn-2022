@@ -6,13 +6,11 @@
 
 int main() {
 
-	const double eps = std::numeric_limits<double>::epsilon() * 2;
-
 	setlocale(LC_ALL, "Russian");
 
-	std::fstream fin("input.txt");
+	std::fstream fin("../../../../data/input.txt");
 
-	std::ofstream fout("output.txt");
+	std::ofstream fout("../../../../data/output.txt");
 
 	Rdec2D cat_pos, mouse_pos;
 
@@ -42,7 +40,7 @@ int main() {
 
 	double k_step = attack_range * 0.8;
 
-	Rdec2D mouse_speed_dir{ -mouse_pos.x, -mouse_pos.y }, cat_speed_dir{ mouse_pos.x - cat_pos.x, mouse_pos.y - cat_pos.y };
+	Rdec2D mouse_speed_dir = -mouse_pos, cat_speed_dir = mouse_pos - cat_pos;
 
 	Norm(cat_speed_dir);
 
@@ -54,8 +52,8 @@ int main() {
 
 	Rdec2D mouse_start = mouse_pos;
 
-	while (Len(mouse_pos + (-mouse_start)) - Len(mouse_start) < eps
-		&& Len(cat_pos + (-mouse_pos)) > attack_range) {
+	while (Len(mouse_pos -mouse_start) - Len(mouse_start) < kEps
+		&& Len(cat_pos - mouse_pos) > attack_range) {
 
 		fout << mouse_pos << " " << cat_pos << "\n";
 
@@ -73,7 +71,7 @@ int main() {
 
 	fout << mouse_pos << " " << cat_pos << "\n";
 
-	if (Len(mouse_pos + (-mouse_start)) - Len(mouse_start) > eps) {
+	if (Len(mouse_pos + (-mouse_start)) - Len(mouse_start) > kEps) {
 		fout << "Mouse in house\n";
 	}
 	else {

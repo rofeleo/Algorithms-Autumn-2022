@@ -1,8 +1,9 @@
-﻿#pragma once
+﻿#ifndef R2D_WORK_WITH_VECTORS
+#endif R2D_WORK_WITH_VECTORS
+#pragma once
 
 #include <iostream>
 #include <numeric>
-#include <limits>
 #include <cmath>
 
 const double kEps = std::numeric_limits<double>::epsilon() * 2;

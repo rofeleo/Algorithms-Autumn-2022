@@ -5,3 +5,7 @@
 TEST_CASE("op+") {
   CHECK(Rdec2D{ 1.0, 0.0 } + Rdec2D{ 0.0, 1.0 } == Rdec2D{ 1.0 + 0.0, 0.0 + 1.0 });
 }
+
+TEST_CASE("op-") {
+  CHECK(Rdec2D{ 2.0, 3.0 } - Rdec2D{1.0, 1.0} == Rdec2D{2.0 - 1.0, 3.0 - 1.0});
+}
