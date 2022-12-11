@@ -55,8 +55,6 @@ int main() {
 	while (Len(mouse_pos - mouse_start) - Len(mouse_start) < kEps
 		&& Len(cat_pos - mouse_pos) > attack_range) {
 
-		fout << mouse_pos << " " << cat_pos << "\n";
-
 		mouse_pos =  mouse_pos + (mouse_speed_dir * (mouse_speed * k_step));
 
 		cat_pos = cat_pos + (cat_speed_dir * (cat_speed * k_step));
@@ -68,6 +66,8 @@ int main() {
 		Norm(cat_speed_dir);
 
 		k_step = Len(mouse_pos - cat_pos) * 0.5;
+		
+		fout << mouse_pos << " " << cat_pos << "\n";
 	}
 
 	fout << mouse_pos << " " << cat_pos << "\n";
