@@ -24,13 +24,13 @@ int main() {
 
 	double cat_speed, mouse_speed;
 
-	// std::cout << "¬ведите скорость мышки: \n";
-
-	fin >> mouse_speed;
-
 	// std::cout << "¬ведите скорость кошки: \n";
 
 	fin >> cat_speed;
+
+	// std::cout << "¬ведите скорость мышки: \n";
+
+	fin >> mouse_speed;
 
 	// std::cout << "¬ведите радиус атаки кошки: \n";
 
@@ -38,7 +38,7 @@ int main() {
 
 	fin >> attack_range;
 
-	double k_step = Len(mouse_pos - cat_pos) * 0.5;
+	double k_step = Len(mouse_pos - cat_pos) * 0.2;
 
 	Rdec2D mouse_speed_dir = -mouse_pos, cat_speed_dir = mouse_pos - cat_pos;
 

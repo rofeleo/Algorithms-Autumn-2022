@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\r2d",
-    "\\src"
+    "\\data"
   ],
-  "SelectedNode": "\\src\\main.cpp",
+  "SelectedNode": "\\data\\foo.png",
   "PreviewInSolutionExplorer": false
 }
