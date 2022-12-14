@@ -61,7 +61,7 @@ int main() {
 
 		cat_way += Len(cat_speed_dir * (cat_speed * k_step));
 
-		cat_speed_dir = mouse_pos + (-cat_pos);
+		cat_speed_dir = mouse_pos - cat_pos;
 
 		Norm(cat_speed_dir);
 
@@ -72,7 +72,7 @@ int main() {
 
 	fout << mouse_pos << " " << cat_pos << "\n";
 
-	if (Len(mouse_pos + (-mouse_start)) - Len(mouse_start) > kEps) {
+	if (Len(mouse_pos - mouse_start) - Len(mouse_start) > kEps) {
 		fout << "Mouse in house\n";
 	}
 	else {
