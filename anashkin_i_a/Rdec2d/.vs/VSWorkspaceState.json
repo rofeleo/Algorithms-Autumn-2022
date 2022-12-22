@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\data"
+    "\\data",
+    "\\r2d"
   ],
-  "SelectedNode": "\\data\\foo.png",
+  "SelectedNode": "\\r2d\\Rdec2d.hpp",
   "PreviewInSolutionExplorer": false
 }
