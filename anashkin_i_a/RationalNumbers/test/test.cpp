@@ -1,12 +1,11 @@
 #include "test.hpp"
 
-int& f(int k) {
-  int a = k;
-  return a;
+int f() {
+  int a = 2;
+  return a += 1;
 }
 
 int main() {
-  int b = f(4);
-  std::cout << b;
+  std::cout << f();
   return 0;
 }

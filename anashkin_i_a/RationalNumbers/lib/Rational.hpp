@@ -10,6 +10,8 @@ public:
   bool operator!=(const Rational& rhs) const { return !operator==(rhs); }
   Rational& operator+=(const Rational& rhs);
   Rational& operator+=(const int rhs) { return operator+=(Rational(rhs, 1)); }
+  Rational& operator-=(const Rational& rhs);
+  Rational& operator-=(const int rhs) { return operator-=(Rational(rhs, 1)); }
   Rational& operator*=(const Rational& rhs);
   Rational& operator*=(const int& rhs) { return operator*=(Rational(rhs, 1)); }
   std::ostream& WriteTo(std::ostream& ostrm) const;
@@ -21,8 +23,13 @@ private:
   int Gcd(int a, int b);
   // int Lcm(int a, int b);
 };
-/*
-Rational operator+(const Rational& lhs, const Rational& rhs) {
-  return 
-}*/
 
+Rational operator+(const Rational& lhs, const Rational& rhs);
+
+Rational operator-(const Rational& lhs, const Rational& rhs);
+
+Rational operator*(const Rational& lhs, const Rational& rhs);
+
+inline std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs) { return rhs.WriteTo(ostrm); }
+
+inline std::istream& operator>>(std::istream& istrm, Rational& rhs) { return rhs.ReadFrom(istrm); }
