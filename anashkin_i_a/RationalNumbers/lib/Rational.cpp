@@ -13,9 +13,7 @@ int Rational::Lcm(int a, int b) {
 Rational::Rational(int m, int n) {
   devisible = m;
   devider = n;
-  int gcd = Gcd(m, n);
-  devider /= gcd;
-  devisible /= gcd;
+  DevideByGcd(devisible, devider);
 }
 
 Rational& Rational::operator+=(const Rational& rhs) {
@@ -44,9 +42,11 @@ std::ostream& Rational::WriteTo(std::ostream& ostrm) const {
 std::istream& Rational::ReadFrom(std::istream& istrm) {
   int m, n;
   char devide;
+
   istrm >> m >> devide >> n;
   if (istrm.good()) {
     if (Rational::devide == devide) {
+      DevideByGcd(m, n);
       devisible = m;
       devider = n;
     } else {
@@ -54,6 +54,12 @@ std::istream& Rational::ReadFrom(std::istream& istrm) {
     }
   }
   return istrm;
+}
+
+void Rational::DevideByGcd(int& lhs, int& rhs) {
+  int gcd = Gcd(lhs, rhs);
+  lhs /= gcd;
+  rhs /= gcd;
 }
 
 Rational operator-(const Rational& lhs, const Rational& rhs) {

@@ -21,6 +21,8 @@ private:
   int devider = 1;
   int devisible = 0;
   int Gcd(int a, int b);
+  void DevideByGcd(int& lhs, int& rhs);
+  
   // int Lcm(int a, int b);
 };
 
