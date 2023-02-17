@@ -1,2 +1,2 @@
-add_library(Rational "Rational.cpp" "Rational.hpp")
-add_executable(testlib "Rational.cpp" "Rational.hpp")
+add_library(Rational "rational.cpp" "rational.hpp")
+add_executable(testlib "rational.cpp" "rational.hpp")

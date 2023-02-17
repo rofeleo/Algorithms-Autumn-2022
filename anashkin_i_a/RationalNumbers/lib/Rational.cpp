@@ -1,54 +1,63 @@
-#include "Rational.hpp"
+#include "rational.hpp"
 
-int Rational::Gcd(int a, int b) {
+int32_t Rational::Gcd(const int32_t a, const int32_t b) const {
   return b ? Rational::Gcd(b, a % b) : a;
 }
 
-/*
-int Rational::Lcm(int a, int b) {
-  return (a * b) / Gcd(a, b);
-}
-*/
-
-Rational::Rational(int m, int n) {
-  devisible = m;
-  devider = n;
-  DevideByGcd(devisible, devider);
+Rational::Rational(const int32_t m, const int32_t n) {
+  if (n <= 0) {
+    throw std::invalid_argument("denum is less or equal zero");
+  }
+  devider_ = n;
+  devisible_ = m;
+  DevideByGcd(devisible_, devider_);
 }
 
 Rational& Rational::operator+=(const Rational& rhs) {
-  devisible = rhs.devisible * devider + devisible * rhs.devider;
-  devider *= rhs.devider;
+  devisible_ = rhs.devisible_ * devider_ + devisible_ * rhs.devider_;
+  devider_ *= rhs.devider_;
+  DevideByGcd(devider_, devisible_);
   return *this;
 }
 
 Rational& Rational::operator*=(const Rational& rhs) {
-  devider *= rhs.devider;
-  devisible *= rhs.devisible;
+  devider_ *= rhs.devider_;
+  devisible_ *= rhs.devisible_;
+  DevideByGcd(devider_, devisible_);
   return *this;
 }
 
 Rational& Rational::operator-=(const Rational& rhs) {
-  devisible = rhs.devisible * devider - devisible * rhs.devider;
-  devider *= rhs.devider;
+  devisible_ = rhs.devisible_ * devider_ - devisible_ * rhs.devider_;
+  devider_ *= rhs.devider_;
+  DevideByGcd(devider_, devisible_);
+  return *this;
+}
+
+Rational& Rational::operator/=(const Rational& rhs) {
+  if (0 == rhs.devisible_) {
+    throw std::invalid_argument("devided by zero!");
+  }
+  devider_ *= rhs.devisible_;
+  devisible_ *= rhs.devider_;
+  DevideByGcd(devider_, devisible_);
   return *this;
 }
 
 std::ostream& Rational::WriteTo(std::ostream& ostrm) const {
-  ostrm << devisible << devide << devider;
+  ostrm << devisible_ << devide_ << devider_;
   return ostrm;
 }
 
 std::istream& Rational::ReadFrom(std::istream& istrm) {
-  int m, n;
-  char devide;
-
-  istrm >> m >> devide >> n;
+  int32_t m, n;
+  char devide_;
+  istrm >> m >> devide_ >> n;
   if (istrm.good()) {
-    if (Rational::devide == devide) {
+    if (Rational::devide_ == devide_) {
       DevideByGcd(m, n);
-      devisible = m;
-      devider = n;
+      devisible_ = m;
+      devider_ = n;
     } else {
       istrm.setstate(std::ios_base::failbit);
     }
@@ -56,8 +65,8 @@ std::istream& Rational::ReadFrom(std::istream& istrm) {
   return istrm;
 }
 
-void Rational::DevideByGcd(int& lhs, int& rhs) {
-  int gcd = Gcd(lhs, rhs);
+void Rational::DevideByGcd(int32_t& lhs, int32_t& rhs) { 
+  int32_t gcd = Gcd(std::abs(lhs), std::abs(rhs));
   lhs /= gcd;
   rhs /= gcd;
 }
